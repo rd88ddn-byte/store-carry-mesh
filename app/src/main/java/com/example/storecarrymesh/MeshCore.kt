@@ -68,7 +68,7 @@ class MeshDiskStore(context: Context) {
 
     fun saveSeenIds(ids: Set<String>) {
         val arr = JSONArray()
-        ids.takeLast(2000).forEach { arr.put(it) }
+        ids.toList().takeLast(2000).forEach { arr.put(it) }
         seenFile.writeText(arr.toString())
     }
 }
